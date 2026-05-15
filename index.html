@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga Ramadani | Programmer & Pentester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="text-gray-300 antialiased">
+    <canvas id="particles" class="fixed inset-0 z-[-1]"></canvas>
+    <div
+      class="fixed inset-0 z-[-1]"
+      style="
+        background:
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(34, 197, 94, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(6, 182, 212, 0.04) 0%,
+            transparent 50%
+          );
+      "
+    ></div>
+
+    <!-- NAV -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-[#0a0a0f]/80 border-b border-white/5"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"
+      >
+        <a href="#" class="text-lg font-bold glow"
+          ><span class="text-white">Bang</span
+          ><span class="text-[#22c55e]">yog/></span></a
+        >
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            href="#profile"
+            class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
+            >Profile</a
+          >
+          <a
+            href="#projects"
+            class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
+            >Contact</a
+          >
+        </div>
+        <button class="burger md:hidden" id="burgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div
+        class="mobile-menu md:hidden flex-col px-6 pb-5 gap-3 border-t border-white/5 pt-4"
+        id="mobileMenu"
+      >
+        <a
+          href="#profile"
+          class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
+          >Profile</a
+        >
+        <a
+          href="#projects"
+          class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
+          >Skills</a
+        >
+        <a
+          href="#contact"
+          class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- PROFILE -->
+    <section
+      id="profile"
+      class="min-h-[70vh] md:min-h-[90vh] flex items-center px-6 pt-10 md:pt-14"
+    >
+      <div
+        class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center"
+      >
+        <div data-reveal="left">
+          <p class="text-[#22c55e] font-mono text-sm mb-2">&gt; hello, i am</p>
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight"
+          >
+            Yoga <span class="text-[#22c55e]">Ramadani</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-[#06b6d4] font-medium mb-4 tracking-wide"
+          >
+            Programmer &amp; Pentester
+          </p>
+          <p class="text-gray-500 leading-relaxed max-w-lg mb-6">
+            Building clean, secure digital solutions. Passionate about code
+            quality, web security, and breaking things to make them stronger.
+          </p>
+          <div class="flex items-center gap-2">
+            <a href="https://github.com/YogaRmdn" class="social-link"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.youtube.com/@BangYog-IT" class="social-link"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/yogaramadani_"
+              class="social-link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.tiktok.com/@yogarmdn.skom" class="social-link"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a href="mailto:yogar7916@gmail.com" class="social-link"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+        <div
+          data-reveal="right"
+          class="hidden md:flex flex-col items-center justify-center"
+        >
+          <div class="relative flex items-center justify-center py-4">
+            <div class="photo-ring">
+              <div
+                class="absolute w-[17rem] h-[17rem] lg:w-[21rem] lg:h-[21rem] rounded-full bg-[#22c55e]/[0.03] blur-3xl"
+              ></div>
+              <div
+                class="relative w-60 h-60 lg:w-[20rem] lg:h-[20rem] rounded-full overflow-hidden ring-2 ring-[#22c55e]/25 ring-offset-[6px] ring-offset-[#0a0a0f] shadow-[0_0_60px_rgba(34,197,94,.1)]"
+              >
+                <img
+                  src="yoga-nobg.png"
+                  alt="Yoga Ramadani"
+                  class="w-full h-full object-cover object-[center_35%]"
+                />
+              </div>
+            </div>
+            <div
+              class="absolute -bottom-1 right-4 lg:right-8 bg-[#0a0a0f]/80 backdrop-blur-md border border-[#22c55e]/20 rounded-full px-3.5 py-1.5 flex items-center gap-2 shadow-lg shadow-[#22c55e]/5"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75 animate-ping"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]"
+                ></span>
+              </span>
+              <span class="text-[#22c55e] font-mono text-sm font-bold glow"
+                >3+</span
+              >
+              <span class="text-gray-400 text-[9px] uppercase tracking-wider"
+                >Content Creator</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div data-reveal="bottom" class="mb-10">
+          <p class="text-[#22c55e] font-mono text-sm mb-2">// projects</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">My Project</h2>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            data-reveal="left"
+            class="flex-1 cli-box rounded-xl border border-white/[0.06] p-5"
+          >
+            <div
+              class="flex items-center gap-3 mb-5 pb-3 border-b border-white/[0.04]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400"
+              >
+                <i class="fas fa-terminal"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-semibold text-sm tracking-wide">
+                  Tools CLI
+                </h3>
+                <p class="text-gray-600 text-[10px] uppercase tracking-widest">
+                  Terminal-based
+                </p>
+              </div>
+              <span class="ml-auto text-[10px] text-gray-600 font-mono"
+                >$ ls -la</span
+              >
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <a
+                href="https://github.com/YogaRmdn/Adminfind"
+                target="_blank"
+                class="project-link"
+                >Adminfind</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Auto-Injection"
+                target="_blank"
+                class="project-link"
+                >Auto-Injection</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/CekWaff"
+                target="_blank"
+                class="project-link"
+                >CekWaff</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Dos-WiFi"
+                target="_blank"
+                class="project-link"
+                >Dos-WiFi</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Email-scraper"
+                target="_blank"
+                class="project-link"
+                >Email-scraper</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/GhostCrawl"
+                target="_blank"
+                class="project-link"
+                >GhostCrawl</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Headercek"
+                target="_blank"
+                class="project-link"
+                >Headercek</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/IP-checker"
+                target="_blank"
+                class="project-link"
+                >IP-checker</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Kalkulator"
+                target="_blank"
+                class="project-link"
+                >Kalkulator</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/LacakIP"
+                target="_blank"
+                class="project-link"
+                >LacakIP</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Path-scanner"
+                target="_blank"
+                class="project-link"
+                >Path-scanner</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Payload-vsftpd-2.3.4"
+                target="_blank"
+                class="project-link"
+                >Payload-vsftpd</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Port-scanner"
+                target="_blank"
+                class="project-link"
+                >Port-scanner</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Pydorking"
+                target="_blank"
+                class="project-link"
+                >Pydorking</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/RAT-Sederhana"
+                target="_blank"
+                class="project-link"
+                >RAT-Sederhana</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Sub-on"
+                target="_blank"
+                class="project-link"
+                >Sub-on</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Subdomain-finder"
+                target="_blank"
+                class="project-link"
+                >Subdomain-finder</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Subfind"
+                target="_blank"
+                class="project-link"
+                >Subfind</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/WebMon"
+                target="_blank"
+                class="project-link"
+                >WebMon</a
+              >
+            </div>
+          </div>
+          <div
+            data-reveal="right"
+            class="flex-1 gui-box rounded-xl border border-white/[0.06] p-5"
+          >
+            <div
+              class="flex items-center gap-3 mb-5 pb-3 border-b border-white/[0.04]"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400"
+              >
+                <i class="fas fa-window-maximize"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-semibold text-sm tracking-wide">
+                  Tools GUI
+                </h3>
+                <p class="text-gray-600 text-[10px] uppercase tracking-widest">
+                  Graphical Interface
+                </p>
+              </div>
+              <span class="ml-auto text-[10px] text-gray-600 font-mono"
+                >app.exe</span
+              >
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <a
+                href="https://github.com/YogaRmdn/Ip-Checker-GUI"
+                target="_blank"
+                class="project-link"
+                >Ip-Checker-GUI</a
+              >
+              <a
+                href="https://github.com/YogaRmdn/Path-scanner-GUI"
+                target="_blank"
+                class="project-link"
+                >Path-scanner-GUI</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-16 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div data-reveal="bottom" class="mb-10">
+          <p class="text-[#22c55e] font-mono text-sm mb-2">// skills</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Tools & Expertise
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div data-reveal="left" class="card p-5 rounded-xl bg-white/[0.015]">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e]"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-medium text-sm">Development</h3>
+                <p class="text-gray-500 text-xs">Frontend & Backend</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag">React Js</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Mysql</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Javascript</span>
+            </div>
+          </div>
+          <div data-reveal="right" class="card p-5 rounded-xl bg-white/[0.015]">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-[#06b6d4]/10 flex items-center justify-center text-[#06b6d4]"
+              >
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-medium text-sm">Security</h3>
+                <p class="text-gray-500 text-xs">Offensive & Defensive</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag">Penetration Testing</span>
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">OWASP Top 10</span>
+              <span class="skill-tag">Parrot Security</span>
+              <span class="skill-tag">Ubuntu</span>
+              <span class="skill-tag">Kali Linux</span>
+              <span class="skill-tag">Burp Suite</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Metasploit</span>
+              <span class="skill-tag">Nmap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <div data-reveal="bottom" class="mb-10">
+          <p class="text-[#22c55e] font-mono text-sm mb-2">// contact</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Let's Connect
+          </h2>
+          <p class="text-gray-500 mt-3 max-w-md mx-auto">
+            Got a project, idea, or just want to chat? Reach out anytime.
+          </p>
+        </div>
+        <div data-reveal="scale" class="flex justify-center gap-3">
+          <a href="https://github.com/YogaRmdn" class="social-link"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.youtube.com/@BangYog-IT" class="social-link"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="https://www.instagram.com/yogaramadani_" class="social-link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.tiktok.com/@yogarmdn.skom" class="social-link"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="mailto:yogar7916@gmail.com" class="social-link"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-5 px-6">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <p class="text-gray-600 text-xs">&copy; 2026 Yoga Ramadani</p>
+        <p class="text-gray-600 text-xs">
+          Built with <span class="text-[#22c55e]">&lt;/&gt;</span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
