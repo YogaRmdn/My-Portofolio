@@ -91,4 +91,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+    const certificates = [
+      { img: 'img/sertifikat1.png', title: 'Sertifikat 1' },
+      { img: 'img/sertifikat2.png', title: 'Sertifikat 2' },
+      { img: 'img/sertifikat3.png', title: 'Sertifikat 3' },
+      { img: 'img/sertifikat4.png', title: 'Sertifikat 4' },
+      { img: 'img/sertifikat5.png', title: 'Sertifikat 5' },
+      { img: 'img/sertifikat6.png', title: 'Sertifikat 6' },
+      { img: 'img/sertifikat7.png', title: 'Sertifikat 7' },
+      { img: 'img/sertifikat8.png', title: 'Sertifikat 8' },
+      { img: 'img/sertifikat9.png', title: 'Sertifikat 9' },
+    ];
+
+    const certGrid = document.getElementById('certGrid');
+    if (certGrid) {
+      certificates.forEach((cert, i) => {
+        const div = document.createElement('div');
+        div.className = 'cert-card';
+        div.setAttribute('data-reveal', i % 3 === 0 ? 'left' : i % 3 === 1 ? 'bottom' : 'right');
+        div.innerHTML = `
+          <img src="${cert.img}" alt="${cert.title}" loading="lazy" />
+          <div class="overlay"><span><i class="fas fa-search-plus mr-1.5 text-[10px]"></i>View</span></div>
+        `;
+        div.addEventListener('click', () => openLightbox(i));
+        certGrid.appendChild(div);
+        observer.observe(div);
+      });
+    }
+
+    let lbIdx = 0;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCaption');
+    const lbCounter = document.getElementById('lbCounter');
+
+    function openLightbox(idx) {
+      lbIdx = idx;
+      updateLightbox();
+      lb.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateLightbox() {
+      const cert = certificates[lbIdx];
+      lbImg.src = cert.img;
+      lbImg.alt = cert.title;
+      lbCap.textContent = cert.title;
+      lbCounter.textContent = `${lbIdx + 1} / ${certificates.length}`;
+    }
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => {
+      lbIdx = (lbIdx - 1 + certificates.length) % certificates.length;
+      updateLightbox();
+    });
+    document.getElementById('lbNext').addEventListener('click', () => {
+      lbIdx = (lbIdx + 1) % certificates.length;
+      updateLightbox();
+    });
+
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('opacity-0')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          lbIdx = (lbIdx - 1 + certificates.length) % certificates.length;
+          updateLightbox();
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          lbIdx = (lbIdx + 1) % certificates.length;
+          updateLightbox();
+        }
+      }
+    });
+
+    function closeLightbox() {
+      lb.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
   });

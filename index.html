@@ -67,6 +67,11 @@
             class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
             >Contact</a
           >
+          <a
+            href="#certificates"
+            class="nav-link relative text-sm text-gray-400 hover:text-white transition-colors"
+            ><i class="fas fa-award text-[10px] mr-1"></i>Certificates</a
+          >
         </div>
         <button class="burger md:hidden" id="burgerBtn" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -95,6 +100,11 @@
           href="#contact"
           class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
           >Contact</a
+        >
+        <a
+          href="#certificates"
+          class="text-sm text-gray-400 hover:text-[#22c55e] transition-colors"
+          ><i class="fas fa-award text-[10px] mr-1"></i>Certificates</a
         >
       </div>
     </nav>
@@ -440,6 +450,60 @@
         </div>
       </div>
     </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="py-16 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div data-reveal="bottom" class="mb-10">
+          <p class="text-[#22c55e] font-mono text-sm mb-2">// certificates</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Certificates & Awards
+          </h2>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          id="certGrid"
+        ></div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 ease-out"
+    >
+      <button
+        id="lbClose"
+        class="absolute top-4 right-4 text-white/60 hover:text-white text-4xl transition-colors z-10 leading-none"
+      >
+        &times;
+      </button>
+      <button
+        id="lbPrev"
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white text-5xl transition-colors z-10 leading-none"
+      >
+        &lsaquo;
+      </button>
+      <button
+        id="lbNext"
+        class="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white text-5xl transition-colors z-10 leading-none"
+      >
+        &rsaquo;
+      </button>
+      <img
+        id="lbImg"
+        class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl object-contain"
+        alt="Certificate"
+      />
+      <p
+        id="lbCaption"
+        class="absolute bottom-6 text-white/60 text-xs font-mono tracking-wide"
+      ></p>
+      <span
+        id="lbCounter"
+        class="absolute top-4 left-4 text-white/30 text-xs font-mono"
+      ></span>
+    </div>
 
     <!-- CONTACT -->
     <section id="contact" class="py-16 px-6">
