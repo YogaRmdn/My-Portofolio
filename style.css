@@ -255,6 +255,15 @@
       transform: translateY(0);
     }
 
+    @media (max-width: 1023px) {
+      .cert-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+      .cert-card:last-child:nth-child(odd) img {
+        object-fit: contain;
+      }
+    }
+
     #lightbox img {
       transform: scale(.95);
       transition: transform .3s cubic-bezier(.22,1,.36,1);
