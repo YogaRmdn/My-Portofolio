@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { img: 'img/sertifikat7.png', title: 'Sertifikat 7' },
       { img: 'img/sertifikat8.png', title: 'Sertifikat 8' },
       { img: 'img/sertifikat9.png', title: 'Sertifikat 9' },
-      { img: 'img/cyber_usti-1.png', title: 'Cyber USTI' },
-      { img: 'img/Workshop_cyber_usti-1.png', title: 'Workshop Cyber USTI' },
-      { img: 'img/Sertifikat_YOGA RAMADANI_Fundamental of Associate Network Administrator - Nasional-1.png', title: 'Fundamental Network Administrator' },
+      { img: 'img/sertifikat10.png', title: 'Cyber USTI' },
+      { img: 'img/sertifikat11.png', title: 'Workshop Cyber USTI' },
+      { img: 'img/sertifikat12.png', title: 'Fundamental Network Administrator' },
     ];
 
     const certGrid = document.getElementById('certGrid');
